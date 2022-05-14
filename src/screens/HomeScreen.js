@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, FlatList, Text} from 'react-native';
+import {StyleSheet, FlatList, Text, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {getHomeData} from '@src/redux/actions/home/homeAction';
 import CardComponent from '@src/components/card/CardComponent';
@@ -21,32 +21,30 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <HeaderComponent title={'Reddit Gallery'} icon={'reddit'} />
-      <Animatable.View duration={500} animation={'zoomIn'}>
-        <SearchView />
-        <FlatList
-          data={homeData}
-          numColumns={2}
-          renderItem={({item, index}) => (
-            <CardComponent
-              key={index}
-              onPress={() =>
-                navigation.navigate(SCREENS.DetailScreen, {
-                  index: index,
-                })
-              }
-              uri={item?.imageUrl}
-              data={item?.data}
-            />
-          )}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={styles.contentContainer}
-          ListEmptyComponent={() => <Text>{'nothing...'}</Text>}
-          initialNumToRender={6}
-        />
-      </Animatable.View>
-    </SafeAreaView>
+      <SearchView />
+      <FlatList
+        data={homeData}
+        numColumns={2}
+        renderItem={({item, index}) => (
+          <CardComponent
+            key={index}
+            onPress={() =>
+              navigation.navigate(SCREENS.DetailScreen, {
+                index: index,
+              })
+            }
+            uri={item?.imageUrl}
+            data={item?.data}
+          />
+        )}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.contentContainer}
+        ListEmptyComponent={() => <Text>{'nothing...'}</Text>}
+        initialNumToRender={6}
+      />
+    </View>
   );
 };
 

@@ -2,7 +2,7 @@ import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, ImageBackground} from 'react-native';
 
-const ImageView = ({route}) => {
+const ImageView = ({}) => {
   const route = useRoute();
 
   return (

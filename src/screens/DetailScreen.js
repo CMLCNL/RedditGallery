@@ -6,9 +6,7 @@ import DetailView from '@src/views/detail/DetailView';
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {StyleSheet, View, ScrollView, ImageBackground} from 'react-native';
 import {useSelector} from 'react-redux';
-import FastImage from 'react-native-fast-image';
 import {hp, screenWidth} from '@src/constants/Dimensions';
-import * as Animatable from 'react-native-animatable';
 import ImageView from '@src/views/detail/ImageView';
 
 const DetailScreen = ({}) => {

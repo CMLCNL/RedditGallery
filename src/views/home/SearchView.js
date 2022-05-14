@@ -33,15 +33,5 @@ const styles = StyleSheet.create({
     borderRadius: hp(5),
     borderLeftWidth: 0,
     borderRightWidth: 0,
-    borderTopWidth: 0,
-    borderBottomColor: '#fe4500',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 4.65,
-    elevation: 8,
   },
 });
