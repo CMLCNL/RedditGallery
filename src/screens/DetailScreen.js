@@ -1,12 +1,12 @@
 import {useRoute} from '@react-navigation/native';
 import {HeaderComponent} from '@src/components/header/HeaderComponent';
 import Slider from '@src/components/slider/SliderComponent';
-import {isEmpty, replaceAmpersand} from '@src/utils/Helpers';
+import {isEmpty} from '@src/utils/Helpers';
 import DetailView from '@src/views/detail/DetailView';
-import React, {useEffect, useLayoutEffect, useState} from 'react';
-import {StyleSheet, View, ScrollView, ImageBackground} from 'react-native';
+import React, {useLayoutEffect, useState} from 'react';
+import {StyleSheet, View, ScrollView} from 'react-native';
 import {useSelector} from 'react-redux';
-import {hp, screenWidth} from '@src/constants/Dimensions';
+import {hp} from '@src/constants/Dimensions';
 import ImageView from '@src/views/detail/ImageView';
 
 const DetailScreen = ({}) => {
@@ -38,10 +38,6 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  image: {
-    width: screenWidth,
-    height: hp(600),
   },
   contentContainerStyle: {
     alignItems: 'center',

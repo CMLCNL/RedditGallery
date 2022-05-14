@@ -18,27 +18,32 @@ export default (state = initialState, action) => {
               !isEmpty(
                 item?.data?.media_metadata[
                   Object.keys(item?.data?.media_metadata)[0]
-                ].s?.u,
+                ].p[2]?.u,
               )
             )
               _data.push({
                 imageUrl: replaceAmpersand(
                   item?.data?.media_metadata[
                     Object.keys(item?.data?.media_metadata)[0]
-                  ].s?.u,
+                  ].p[2]?.u,
                 ),
                 data: item?.data,
                 gallery: item?.data?.media_metadata,
               });
           }
           if (!isEmpty(item?.data?.preview)) {
-            if (!isEmpty(item?.data?.preview?.images[0]?.source?.url))
+            if (!isEmpty(item?.data?.preview?.images[0]?.resolutions)) {
+              const imageUrl =
+                item?.data?.preview?.images[0]?.resolutions[2]?.url;
               _data.push({
                 imageUrl: replaceAmpersand(
-                  item?.data?.preview?.images[0]?.source?.url,
+                  !isEmpty(imageUrl)
+                    ? imageUrl
+                    : item?.data?.preview?.images[0]?.resolutions[0]?.url,
                 ),
                 data: item?.data,
               });
+            }
           }
         });
       }

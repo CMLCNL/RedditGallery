@@ -7,6 +7,7 @@ import {useSelector} from 'react-redux';
 import * as Icons from '@constants/Icons';
 import * as Animatable from 'react-native-animatable';
 import moment from 'moment';
+import {isEmpty} from '@src/utils/Helpers';
 
 const DetailView = () => {
   const route = useRoute();
@@ -15,11 +16,11 @@ const DetailView = () => {
 
   let CommentIcon = Icons['comment'];
   let LikeIcon = Icons['like'];
+  let RedditIcon = Icons['reddit'];
 
   useEffect(() => {
     const data = homeData[route?.params?.index];
     setData(data?.data);
-    console.log('DETAIL SCREEN', data?.data);
   }, []);
 
   return (
@@ -30,7 +31,13 @@ const DetailView = () => {
         </View>
         <View style={styles.infoContainer}>
           <View>
-            <Text style={styles.username}>{'posted by: ' + data?.author}</Text>
+            <View style={styles.usernameContainer}>
+              <RedditIcon width={wp(22)} fill={'#fe4500'} />
+              <Text style={styles.username}>{data?.author}</Text>
+            </View>
+            <Text style={styles.postDate}>
+              {moment(data?.created * 1000).fromNow()}
+            </Text>
           </View>
           <View style={styles.iconContainer}>
             <LikeIcon width={wp(22)} fill={'#ff4d6d'} />
@@ -39,6 +46,11 @@ const DetailView = () => {
             <Text style={styles.texts}>{data?.num_comments}</Text>
           </View>
         </View>
+        {!isEmpty(data?.selftext) && (
+          <View style={styles.paragraphContainer}>
+            <Text style={styles.paragraph}>{data?.selftext}</Text>
+          </View>
+        )}
       </View>
     </Animatable.View>
   );
@@ -62,12 +74,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  usernameContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   infoContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: 'rgba(0,0,0,0.06)',
-    padding: hp(2),
+    padding: hp(5),
     borderRadius: hp(10),
     marginVertical: hp(10),
     width: wp(screenWidth - wp(20)),
@@ -78,12 +94,31 @@ const styles = StyleSheet.create({
   },
   texts: {
     color: 'gray',
-    marginHorizontal: wp(5),
+    marginHorizontal: wp(8),
   },
   username: {
     padding: hp(3),
     fontSize: FontSize(14),
     fontWeight: 'bold',
     color: '#00000095',
+    fontStyle: 'italic',
+  },
+  postDate: {
+    padding: hp(3),
+    fontSize: FontSize(14),
+    fontWeight: 'bold',
+    color: '#00000095',
+    fontStyle: 'italic',
+  },
+  paragraphContainer: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: 'rgba(0,0,0,0.06)',
+    borderRadius: hp(10),
+    padding: hp(5),
+  },
+  paragraph: {
+    marginVertical: hp(10),
+    width: wp(screenWidth - wp(20)),
   },
 });

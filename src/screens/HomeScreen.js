@@ -41,7 +41,11 @@ const HomeScreen = () => {
         )}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.contentContainer}
-        ListEmptyComponent={() => <Text>{'nothing...'}</Text>}
+        ListEmptyComponent={() => (
+          <Text style={styles.text}>
+            {'I think what you are looking for is not here... 📟'}
+          </Text>
+        )}
         initialNumToRender={6}
       />
     </View>
@@ -55,6 +59,13 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingBottom: hp(150),
+  },
+  text: {
+    fontSize: hp(30),
+    color: '#000',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    fontWeight: 'bold',
   },
 });
 

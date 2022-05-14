@@ -25,7 +25,7 @@ export const SearchView = ({...props}) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: hp(10),
+    marginBottom: hp(5),
   },
   inputContainerStyle: {
     width: '100%',
@@ -33,5 +33,6 @@ const styles = StyleSheet.create({
     borderRadius: hp(5),
     borderLeftWidth: 0,
     borderRightWidth: 0,
+    borderTopWidth: 0,
   },
 });

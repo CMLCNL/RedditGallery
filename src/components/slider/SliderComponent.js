@@ -40,20 +40,22 @@ const Slider = ({data}) => {
           onScroll={handleActiveSlider}
           scrollEventThrottle={16}>
           {Object.keys(data).map((key, index) => (
-            <ImageBackground
-              key={index}
-              source={{
-                uri: replaceAmpersand(data[key]?.s?.u),
-              }}
-              blurRadius={20}>
-              <FastImage
+            <Animatable.View animation={'zoomIn'} duration={500}>
+              <ImageBackground
+                key={index}
                 source={{
-                  uri: replaceAmpersand(data[key]?.s?.u),
+                  uri: replaceAmpersand(data[key]?.p[0]?.u),
                 }}
-                style={styles.image}
-                resizeMode={'contain'}
-              />
-            </ImageBackground>
+                blurRadius={20}>
+                <FastImage
+                  source={{
+                    uri: replaceAmpersand(data[key]?.p[2]?.u),
+                  }}
+                  style={styles.image}
+                  resizeMode={'contain'}
+                />
+              </ImageBackground>
+            </Animatable.View>
           ))}
         </ScrollView>
       </View>
