@@ -8,7 +8,7 @@
         "@constants/*": ["src/constants/*"],
         "@screens/*": ["src/screens/*"],
         "@views/*": ["src/views/*"],
-        "@navigation/*": ["src/navigation/*"],
+        "@components/*": ["src/components/*"],
       }
     },
     "exclude": ["node_modules"]
