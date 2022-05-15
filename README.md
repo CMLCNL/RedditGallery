@@ -33,6 +33,7 @@
 
 <details>
 <summary><strong> USEFULL GIT COMMANDS </strong></summary>
+  
 * git status = See changes
 * git branch = See branches in your computer (branch you are working on is green)
 * git branch "X" = Create a branch "X" in your computer
@@ -44,6 +45,7 @@
 * git commit -m "Fixing TopHeaderComponent" = Adding a commit message
 * git push origin "X" = Pushing to branch "X"
 * git reset HEAD~1 = Reset your local git commit
+  
 </details>
 
 # Installation
