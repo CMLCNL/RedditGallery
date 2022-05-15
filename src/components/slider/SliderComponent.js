@@ -12,7 +12,7 @@ import {isEmpty, replaceAmpersand} from '@src/utils/Helpers';
 import FastImage from 'react-native-fast-image';
 import * as Animatable from 'react-native-animatable';
 
-const height = hp(400);
+const height = hp(600);
 
 const Slider = ({data}) => {
   const noticesRef = useRef();
