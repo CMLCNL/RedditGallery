@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
-import {hp, wp} from '@constants/Dimensions';
+import {wp} from '@constants/Dimensions';
 import {useNavigation} from '@react-navigation/native';
 import * as Icons from '@constants/Icons';
 

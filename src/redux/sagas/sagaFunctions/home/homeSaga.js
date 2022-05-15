@@ -1,6 +1,5 @@
-import {call, fork, put, select} from 'redux-saga/effects';
+import {call, put} from 'redux-saga/effects';
 import {GET_HOME_DATA_SUCCESS} from '@redux/actions/home/homeAction';
-
 import {getHomeDataCall} from '@redux/api/home/homeAPICall';
 
 export function* getHomeDataSaga({data}) {

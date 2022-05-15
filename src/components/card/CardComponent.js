@@ -5,6 +5,7 @@ import {
   View,
   ActivityIndicator,
   Text,
+  ImageBackground,
 } from 'react-native';
 import {wp, hp, screenWidth} from '@constants/Dimensions';
 import FastImage from 'react-native-fast-image';
@@ -17,15 +18,23 @@ const CardComponent = ({uri, data, onPress}) => {
     <Animatable.View animation={'zoomIn'} duration={500}>
       <TouchableOpacity onPress={onPress}>
         <View style={styles.container}>
-          <FastImage
+          <ImageBackground
             source={{
               uri: uri,
             }}
-            style={styles.image}
-            onLoad={() => {
-              setLoading(false);
-            }}
-          />
+            blurRadius={15}>
+            <FastImage
+              source={{
+                uri: uri,
+              }}
+              onLoad={() => {
+                setLoading(false);
+              }}
+              style={styles.image}
+              resizeMode={FastImage.resizeMode.contain}
+            />
+          </ImageBackground>
+
           <Text style={styles.title} numberOfLines={1}>
             {data.title}
           </Text>

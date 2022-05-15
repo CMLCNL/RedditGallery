@@ -1,5 +1,5 @@
 import SearchComponent from '@src/components/input/SearchComponent';
-import {hp, wp} from '@src/constants/Dimensions';
+import {hp} from '@src/constants/Dimensions';
 import {getHomeData} from '@src/redux/actions/home/homeAction';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';

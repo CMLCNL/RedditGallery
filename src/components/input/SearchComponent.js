@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import {wp, hp, screenWidth} from '@constants/Dimensions';
+import {wp, hp} from '@constants/Dimensions';
 import {FontSize} from '@constants/Sizes';
 import CustomTextInput from '@components/input/TextInput';
 import * as Icons from '@constants/Icons';

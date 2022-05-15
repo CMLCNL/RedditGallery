@@ -3,8 +3,6 @@ import {StyleSheet, FlatList, Text, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {getHomeData} from '@src/redux/actions/home/homeAction';
 import CardComponent from '@src/components/card/CardComponent';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import * as Animatable from 'react-native-animatable';
 import {SearchView} from '@src/views/home/SearchView';
 import {hp} from '@src/constants/Dimensions';
 import {HeaderComponent} from '@src/components/header/HeaderComponent';

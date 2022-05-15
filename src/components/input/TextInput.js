@@ -1,9 +1,9 @@
 import {FontSize} from '@constants/Sizes';
-import {useTheme} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {TextInput, View, StyleSheet, Text} from 'react-native';
 import {hp, wp} from '@constants/Dimensions';
 import {isEmpty} from '@src/utils/Helpers';
+
 const CustomTextInput = props => {
   const {
     id,
