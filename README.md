@@ -141,4 +141,11 @@ const Route = () => {
 navigation.navigate(SCREENS.HomeScreen);
 ```
 
+## Detox App Tests Usage
 
+```
+yarn add global detox-cli
+
+//for iOS
+detox test -c ios
+```
