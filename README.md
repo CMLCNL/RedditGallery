@@ -20,7 +20,7 @@
 #### Information
 
 - Type the username you want and see the posts of the user listed on the top.
-- Go to the detail of the mail.
+- Go to the detail of the post.
 - Find out how to use redux and redux-saga in this project.
 - The application has been made enjoyable to use with various animations.
 - It was coded with fully functional component.
