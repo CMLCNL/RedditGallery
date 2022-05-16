@@ -25,7 +25,8 @@ const BackButtonComponent = ({
         containerStyle,
         {backgroundColor: backgroundColor},
       ]}
-      onPress={!!onPress ? onPress : onHandle}>
+      onPress={!!onPress ? onPress : onHandle}
+      testID={'header-back-button'}>
       <Icon color={color} />
     </TouchableOpacity>
   );

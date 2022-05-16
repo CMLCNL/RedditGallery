@@ -19,7 +19,7 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID={'home'}>
       <HeaderComponent title={'Reddit Gallery'} icon={'reddit'} />
       <SearchView />
       <FlatList
@@ -28,6 +28,7 @@ const HomeScreen = () => {
         renderItem={({item, index}) => (
           <CardComponent
             key={index}
+            testID={`home-card-${index}`}
             onPress={() =>
               navigation.navigate(SCREENS.DetailScreen, {
                 index: index,

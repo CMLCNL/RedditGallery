@@ -15,6 +15,7 @@ export const SearchView = ({...props}) => {
   return (
     <View style={styles.container}>
       <SearchComponent
+        testID={'search-input'}
         onSubmitEditing={onSubmitEditing}
         containerStyle={styles.inputContainerStyle}
         placeholder={'Search'}

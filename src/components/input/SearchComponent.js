@@ -11,6 +11,7 @@ const SearchComponent = ({
   onSubmitEditing,
   containerStyle,
   value,
+  testID,
   ...props
 }) => {
   let SearchIcon = Icons['search'];
@@ -24,6 +25,7 @@ const SearchComponent = ({
       onValueChange={onValueChange}
       onSubmitEditing={onSubmitEditing}
       keyboardKeyType={'search'}
+      testID={testID}
       leftSide={
         <SearchIcon
           style={styles.leftSide}

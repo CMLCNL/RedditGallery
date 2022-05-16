@@ -4,5 +4,5 @@ export const homePersistConfig = {
   key: 'RedditGallery_Home',
   storage: AsyncStorage,
   version: '1.0.0',
-  blacklist: [],
+  blacklist: ['homeData'],
 };

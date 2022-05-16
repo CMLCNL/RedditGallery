@@ -12,11 +12,11 @@ import FastImage from 'react-native-fast-image';
 import {FontSize} from '@src/constants/Sizes';
 import * as Animatable from 'react-native-animatable';
 
-const CardComponent = ({uri, data, onPress}) => {
+const CardComponent = ({uri, data, onPress, testID}) => {
   const [loading, setLoading] = useState(true);
   return (
     <Animatable.View animation={'zoomIn'} duration={500}>
-      <TouchableOpacity onPress={onPress}>
+      <TouchableOpacity onPress={onPress} testID={testID}>
         <View style={styles.container}>
           <ImageBackground
             source={{

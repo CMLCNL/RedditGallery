@@ -2,7 +2,7 @@ import {GET_HOME_DATA_SUCCESS} from '@redux/actions/home/homeAction';
 import {isEmpty, replaceAmpersand} from '@src/utils/Helpers';
 
 const initialState = {
-  homeData: {},
+  homeData: [],
 };
 
 export default (state = initialState, action) => {

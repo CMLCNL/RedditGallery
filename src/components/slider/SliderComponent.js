@@ -38,9 +38,10 @@ const Slider = ({data}) => {
           showsHorizontalScrollIndicator={false}
           style={styles.scroll}
           onScroll={handleActiveSlider}
+          testID={'slider'}
           scrollEventThrottle={16}>
           {Object.keys(data).map((key, index) => (
-            <Animatable.View animation={'zoomIn'} duration={500}>
+            <Animatable.View key={key} animation={'zoomIn'} duration={500}>
               <ImageBackground
                 key={index}
                 source={{

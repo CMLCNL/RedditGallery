@@ -1,3 +1,5 @@
+import {Platform} from 'react-native';
+
 export const isEmpty = value => {
   return (
     value == null || // Check for null or undefined

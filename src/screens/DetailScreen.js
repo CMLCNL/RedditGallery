@@ -23,10 +23,10 @@ const DetailScreen = ({}) => {
   return (
     <View style={styles.container}>
       <HeaderComponent backButton title={'Reddit Gallery'} icon={'reddit'} />
-      {!isEmpty(data?.gallery) && <Slider data={data?.gallery} />}
       <ScrollView
         contentContainerStyle={styles.contentContainerStyle}
         showsVerticalScrollIndicator={false}>
+        {!isEmpty(data?.gallery) && <Slider data={data?.gallery} />}
         {isEmpty(data?.gallery) && !isEmpty(data) && <ImageView />}
         <DetailView />
       </ScrollView>
